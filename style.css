@@ -1,0 +1,186 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #ffcc29;
+  --blue: #1d539e;
+  --gray: #828799;
+  --page-background: #f9fbfc;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--page-background);
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+.blue {
+  height: 50vh;
+  width: 100vw;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--page-background);
+}
+
+.containText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  bottom: 40px;
+}
+
+.card {
+  width: 300px;
+  height: 380px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 12px;
+  bottom: 80px;
+}
+
+.infoPrice p:nth-of-type(1) {
+  padding: 0 0 10px 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.infoPrice p:nth-of-type(1)::after {
+  content: "/mês";
+  font-size: 15px;
+  margin-left: 2px;
+  color: var(--gray);
+}
+.infoPrice span {
+  font-size: 15px;
+}
+
+.infoPrice p:nth-of-type(2) {
+  padding: 0 0 10px 10px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.infoPrice {
+  border-bottom: 1px solid var(--gray);
+  width: 260px;
+  margin: 0 auto;
+}
+
+.cardTitle {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  padding-left: 30px;
+  padding-top: 10px;
+  transition: ease-in-out 0.3s;
+}
+
+/*---AfterLine---*/
+.info img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 10px 0 10px;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/*---Botao---*/
+/*Tenta depois retirar o botao de dentro da div,meio que para padronizar o alinhamento vertical e lateral */
+button {
+  width: 235px;
+  height: 45px;
+  border-radius: 8px;
+  margin: 10px auto;
+  border: none;
+  background-color: var(--page-background);
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 700;
+  transition: ease 0.3s;
+  box-shadow: 3px 3px 0 1px var(--gray);
+  transition: ease 0.3s;
+}
+
+#card2 button {
+  position: relative;
+  top: 35px;
+}
+
+#card1 button {
+  position: relative;
+  top: 70px;
+}
+
+/*Animations and transitions*/
+
+#card2 h3::after {
+  content: "Popular";
+  font-size: 12px;
+  background-color: var(--blue);
+  color: var(--page-background);
+  position: relative;
+  left: 90px;
+  bottom: 3px;
+  text-align: center;
+  padding: 5px 16px;
+  border-radius: 20px;
+}
+
+.card:hover .cardTitle {
+  background-color: var(--yellow);
+  color: #1d539e;
+}
+.card:hover {
+  transform: translateY(-15px);
+}
+
+button:active {
+  box-shadow: 0 0 0 0 var(--gray), inset 3px 3px 0 var(--gray);
+  transform: translate(3px, 3px);
+}
+
+button:hover {
+  background-color: var(--blue);
+  color: var(--page-background);
+}
+
+/*Media Queries*/
+@media screen and (max-width: 945px) {
+  body {
+    overflow: auto;
+  }
+  .container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .containText {
+    flex-wrap: wrap;
+    margin: 30px 10px 60px 10px;
+  }
+}
